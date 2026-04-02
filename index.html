@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Envelope Invite</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="scene">
+      <h1>Valima Invitation</h1>
+
+      <section class="envelope-stage" aria-label="Interactive wedding invitation envelope">
+        <div class="envelope" id="envelope">
+          <div class="envelope-back"></div>
+          <div class="envelope-flap" id="envelopeFlap"></div>
+          <article class="invite-card" id="inviteCard" aria-live="polite">
+            <img src="muslim-couple.svg" alt="Illustration of a Muslim wedding couple" class="couple-photo" />
+
+            <p class="small">In the name of Allah, the Most Beneficent and Merciful</p>
+            <p>With the blessings of our respected parents<br /><strong>Late Mrs. &amp; Mr. Qasim Deshmukh</strong></p>
+            <p><strong>Mrs. &amp; Mr. Nayes Deshmukh</strong><br />request your gracious presence at the</p>
+            <h2>VALIMA CEREMONY</h2>
+            <p>of our beloved son<br /><strong>Er. Isaq Deshmukh</strong><br />with<br /><strong>Dr. Farkhanda Gohar Sagri</strong></p>
+            <p class="small">D/o. Janab Iftikhar Husain Sagri Sab, R/o. Solapur</p>
+
+            <p><em>Insha Allah Valima</em></p>
+            <p><strong>Thursday, 23 April 2026</strong><br />5th Zilqada 1447 Hijri</p>
+            <p>Dinner: 7:30 PM</p>
+
+            <p><strong>Venue</strong><br />Royal Palm Events &amp; Banquet Hall<br />Hotgi Road, Industrial Estate, Solapur, Maharashtra</p>
+
+            <p class="small">With best compliments from family, relatives &amp; friends.</p>
+          </article>
+          <div class="envelope-front"></div>
+        </div>
+
+        <button id="openBtn" class="open-btn" aria-controls="inviteCard">Open Invitation</button>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="220" viewBox="0 0 220 220" role="img" aria-label="Muslim wedding couple illustration">
+  <defs>
+    <linearGradient id="groom" x1="0" x2="1">
+      <stop offset="0" stop-color="#2d2d2d"/>
+      <stop offset="1" stop-color="#555"/>
+    </linearGradient>
+    <linearGradient id="bride" x1="0" x2="1">
+      <stop offset="0" stop-color="#7f1545"/>
+      <stop offset="1" stop-color="#bf376f"/>
+    </linearGradient>
+  </defs>
+  <rect width="220" height="220" fill="#fffdf5" rx="18"/>
+  <circle cx="82" cy="72" r="25" fill="#f2c7a6"/>
+  <circle cx="142" cy="72" r="25" fill="#efc2a0"/>
+  <path d="M53 132c9-21 21-34 29-34s20 13 29 34v58H53z" fill="url(#groom)"/>
+  <path d="M111 132c9-21 21-34 31-34s22 13 31 34v58h-62z" fill="url(#bride)"/>
+  <path d="M117 62c8-18 24-30 43-30 5 0 10 1 14 3-8 14-14 25-14 44h-43z" fill="#8b1f41" opacity="0.9"/>
+  <rect x="76" y="140" width="12" height="50" fill="#fff" opacity="0.85"/>
+  <rect x="136" y="141" width="12" height="50" fill="#ffd2e3" opacity="0.75"/>
+  <text x="110" y="207" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#5d1d2f">Muslim Wedding Couple</text>
+</svg>
