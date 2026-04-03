@@ -24,20 +24,19 @@ function updateCountdown() {
   countdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }
 
+function setMusicButton(isPlaying) {
+  musicToggle.textContent = isPlaying ? '❚❚ Pause Nasheed' : '▶ Play Nasheed';
+  musicToggle.dataset.playing = isPlaying ? 'true' : 'false';
+}
+
 function startNasheed() {
   if (!bgNasheed) return;
 
-  bgNasheed.volume = 0.35;
+  bgNasheed.volume = 0.75;
   bgNasheed
     .play()
-    .then(() => {
-      musicToggle.textContent = '❚❚ Pause Nasheed';
-      musicToggle.dataset.playing = 'true';
-    })
-    .catch(() => {
-      musicToggle.textContent = '▶ Play Nasheed';
-      musicToggle.dataset.playing = 'false';
-    });
+    .then(() => setMusicButton(true))
+    .catch(() => setMusicButton(false));
 }
 
 openBtn.addEventListener('click', () => {
@@ -53,15 +52,13 @@ musicToggle.addEventListener('click', () => {
   if (!bgNasheed) return;
 
   if (bgNasheed.paused) {
-    bgNasheed.play();
-    musicToggle.textContent = '❚❚ Pause Nasheed';
-    musicToggle.dataset.playing = 'true';
+    bgNasheed.play().then(() => setMusicButton(true)).catch(() => setMusicButton(false));
   } else {
     bgNasheed.pause();
-    musicToggle.textContent = '▶ Play Nasheed';
-    musicToggle.dataset.playing = 'false';
+    setMusicButton(false);
   }
 });
 
+setMusicButton(false);
 updateCountdown();
 setInterval(updateCountdown, 1000);
