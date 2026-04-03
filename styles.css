@@ -1,50 +1,11 @@
-const openBtn = document.getElementById('openBtn');
-const detailsPages = document.getElementById('detailsPages');
-const envelopeWrap = document.getElementById('envelopeWrap');
-const countdown = document.getElementById('countdown');
-
-const weddingDate = new Date('2026-04-22T19:30:00');
-
-function updateCountdown() {
-  const now = new Date();
-  const diff = weddingDate.getTime() - now.getTime();
-
-  if (diff <= 0) {
-    countdown.textContent = 'The wedding celebration has begun!';
-    return;
-  }
-
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((diff / (1000 * 60)) % 60);
-  const seconds = Math.floor((diff / 1000) % 60);
-
-  countdown.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-}
-
-openBtn.addEventListener('click', () => {
-  detailsPages.hidden = false;
-  openBtn.setAttribute('aria-expanded', 'true');
-  detailsPages.scrollIntoView({ behavior: 'smooth' });
-
-  // keep envelope as first screen; user can scroll back up
-  envelopeWrap.style.minHeight = '100vh';
-});
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
-styles.css
-styles.css
-New
-+204
--0
-
 :root {
   --sage: #97af8d;
-  --deep-sage: #5f7655;
+  --deep-sage: #33543e;
   --wax: #f4eee1;
-  --ink: #172014;
-  --paper: #fffef8;
+  --ink: #132016;
+  --gold: #f2cf75;
+  --jannah-emerald: #1f5a43;
+  --jannah-night: #0e2b20;
 }
 
 * {
@@ -55,10 +16,12 @@ body {
   margin: 0;
   font-family: 'Playfair Display', Georgia, serif;
   font-weight: 600;
-  background:
-    linear-gradient(rgba(7, 14, 9, 0.35), rgba(7, 14, 9, 0.35)),
-    url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=80') center / cover fixed;
   color: var(--ink);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(242, 207, 117, 0.28), transparent 25%),
+    radial-gradient(circle at 75% 15%, rgba(161, 219, 186, 0.22), transparent 32%),
+    linear-gradient(145deg, #123d2d, #0c241b 55%, #07160f);
+  min-height: 100vh;
 }
 
 .page {
@@ -108,20 +71,9 @@ body {
   color: rgba(50, 68, 46, 0.2);
 }
 
-.flower-a {
-  top: 42px;
-  left: 38px;
-}
-
-.flower-b {
-  bottom: 56px;
-  right: 40px;
-}
-
-.flower-c {
-  top: 90px;
-  right: 58px;
-}
+.flower-a { top: 42px; left: 38px; }
+.flower-b { bottom: 56px; right: 40px; }
+.flower-c { top: 90px; right: 58px; }
 
 .seal-button {
   position: relative;
@@ -163,19 +115,27 @@ body {
   place-content: center;
   text-align: center;
   padding: 2rem;
-  border-top: 1px solid #d8dfcc;
+  border-top: 1px solid rgba(219, 203, 163, 0.4);
   color: #fdfcf9;
+  position: relative;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
 }
 
 .page-card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(8, 14, 9, 0.52);
+  background: linear-gradient(rgba(8, 18, 13, 0.7), rgba(8, 18, 13, 0.78));
+}
+
+.page-card::after {
+  content: '☾';
+  position: absolute;
+  top: 1rem;
+  right: 1.3rem;
+  font-size: 2.2rem;
+  color: rgba(242, 207, 117, 0.9);
 }
 
 .page-card > * {
@@ -188,31 +148,41 @@ body {
   margin: 0 0 1rem;
   font-family: 'Cinzel', serif;
   font-weight: 800;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  color: var(--gold);
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
 }
 
 .page-card p,
 .page-card li {
   font-size: 1.12rem;
-  line-height: 1.65;
+  line-height: 1.7;
   font-weight: 700;
 }
 
 .page-1 {
-  background-image: url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1800&q=80');
+  background:
+    radial-gradient(circle at 80% 8%, rgba(242, 207, 117, 0.35), transparent 26%),
+    linear-gradient(180deg, var(--jannah-emerald), var(--jannah-night));
 }
 
 .page-2 {
-  background-image: url('https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&w=1800&q=80');
+  background:
+    radial-gradient(circle at 14% 12%, rgba(201, 239, 221, 0.32), transparent 28%),
+    linear-gradient(180deg, #1c6348, #0d2a1f);
 }
 
 .page-3 {
-  background-image: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&w=1800&q=80');
+  background:
+    radial-gradient(circle at 82% 18%, rgba(246, 217, 145, 0.25), transparent 30%),
+    linear-gradient(180deg, #21553f, #102b20);
 }
 
 .page-4 {
-  background-image: url('https://images.unsplash.com/photo-1465495976277-4387d4b0d799?auto=format&fit=crop&w=1800&q=80');
+  background:
+    radial-gradient(circle at 50% 10%, rgba(242, 207, 117, 0.3), transparent 35%),
+    linear-gradient(180deg, #174233, #0b1f18);
 }
 
 ul {
@@ -230,16 +200,33 @@ ul {
   padding: 0.7rem 1.1rem;
   border-radius: 8px;
   font-weight: 700;
+  border: 1px solid rgba(242, 207, 117, 0.6);
 }
 
 .countdown {
   font-size: clamp(1.4rem, 5vw, 2.2rem);
   font-weight: 800;
   margin-bottom: 1rem;
+  color: #ffe7ad;
 }
 
 .note {
   font-family: 'Dancing Script', cursive;
   font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.music-toggle {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 30;
+  border: 1px solid rgba(242, 207, 117, 0.8);
+  background: rgba(12, 36, 27, 0.88);
+  color: #ffe6a0;
+  padding: 0.6rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
   font-weight: 700;
 }
