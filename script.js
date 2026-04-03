@@ -65,4 +65,3 @@ musicToggle.addEventListener('click', () => {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
-styles.css
