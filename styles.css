@@ -4,8 +4,6 @@
   --wax: #f4eee1;
   --ink: #132016;
   --gold: #f2cf75;
-  --jannah-emerald: #1f5a43;
-  --jannah-night: #0e2b20;
 }
 
 * {
@@ -18,9 +16,8 @@ body {
   font-weight: 600;
   color: var(--ink);
   background:
-    radial-gradient(circle at 20% 20%, rgba(242, 207, 117, 0.28), transparent 25%),
-    radial-gradient(circle at 75% 15%, rgba(161, 219, 186, 0.22), transparent 32%),
-    linear-gradient(145deg, #123d2d, #0c241b 55%, #07160f);
+    linear-gradient(rgba(12, 30, 21, 0.45), rgba(12, 30, 21, 0.45)),
+    url('https://images.unsplash.com/photo-1504198266285-165a56ffe4d6?auto=format&fit=crop&w=1800&q=80') center / cover fixed;
   min-height: 100vh;
 }
 
@@ -84,8 +81,8 @@ body {
   border-radius: 50%;
   background: var(--wax);
   box-shadow: inset -3px -3px 6px rgba(0, 0, 0, 0.1), inset 3px 3px 6px rgba(255, 255, 255, 0.7), 0 10px 18px rgba(0, 0, 0, 0.2);
-  font-family: 'Dancing Script', cursive;
-  font-size: 2rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.3rem;
   font-weight: 700;
   color: var(--deep-sage);
   cursor: pointer;
@@ -96,8 +93,8 @@ body {
   z-index: 2;
   margin-top: 1.2rem;
   text-align: center;
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.2rem, 5vw, 3rem);
   font-weight: 700;
   color: #25301f;
 }
@@ -126,7 +123,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(8, 18, 13, 0.7), rgba(8, 18, 13, 0.78));
+  background: linear-gradient(rgba(8, 18, 13, 0.7), rgba(8, 18, 13, 0.75));
 }
 
 .page-card::after {
@@ -162,27 +159,30 @@ body {
 }
 
 .page-1 {
-  background:
-    radial-gradient(circle at 80% 8%, rgba(242, 207, 117, 0.35), transparent 26%),
-    linear-gradient(180deg, var(--jannah-emerald), var(--jannah-night));
+  background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1800&q=80');
 }
 
 .page-2 {
-  background:
-    radial-gradient(circle at 14% 12%, rgba(201, 239, 221, 0.32), transparent 28%),
-    linear-gradient(180deg, #1c6348, #0d2a1f);
+  background-image: url('https://images.unsplash.com/photo-1460364157752-926555421a7e?auto=format&fit=crop&w=1800&q=80');
 }
 
 .page-3 {
-  background:
-    radial-gradient(circle at 82% 18%, rgba(246, 217, 145, 0.25), transparent 30%),
-    linear-gradient(180deg, #21553f, #102b20);
+  background-image: url('https://images.unsplash.com/photo-1472653431158-6364773b2a56?auto=format&fit=crop&w=1800&q=80');
 }
 
 .page-4 {
-  background:
-    radial-gradient(circle at 50% 10%, rgba(242, 207, 117, 0.3), transparent 35%),
-    linear-gradient(180deg, #174233, #0b1f18);
+  background-image: url('https://images.unsplash.com/photo-1502635385003-ee1e6a1a742d?auto=format&fit=crop&w=1800&q=80');
+}
+
+.page-5 {
+  background-image: url('https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?auto=format&fit=crop&w=1800&q=80');
+}
+
+.blessings-note {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  line-height: 1.4;
+  color: #fff5d8;
 }
 
 ul {
@@ -211,8 +211,8 @@ ul {
 }
 
 .note {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.8rem;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.1rem;
   font-weight: 700;
 }
 
