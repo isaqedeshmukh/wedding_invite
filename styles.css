@@ -174,15 +174,14 @@ body {
 .page-2 {
   background-image:
     linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
-    url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/couple.png'),
-    url('https://images.unsplash.com/photo-1533000759938-aa0ba70beceb?auto=format&fit=crop&w=2000&q=80');
+    url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/couple.png');
   background-size: cover, min(72vw, 350px), cover;
   background-position: center, center 63%, center;
   background-repeat: no-repeat;
 }
 
 .page-3 {
-  background-image: url('https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=2000&q=80');
+  background-image: url('https://raw.github.com/isaqedeshmukh/wedding_invite/blob/main/location.png');
 }
 
 .page-4 {
