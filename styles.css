@@ -168,28 +168,36 @@ body {
 }
 
 .page-1 {
-  background-image: url('https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2000&q=80');
+  background-image:
+    linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.28)),
+    url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/envelop_background.jpg');
 }
 
 .page-2 {
   background-image:
-    linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
+    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
     url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/couple.png');
-  background-size: cover, min(72vw, 350px), cover;
-  background-position: center, center 63%, center;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
 .page-3 {
-  background-image: url('https://raw.github.com/isaqedeshmukh/wedding_invite/blob/main/location.png');
+  background-image:
+    linear-gradient(rgba(0,0,0,0.32), rgba(0,0,0,0.32)),
+    url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/location.png');
 }
 
 .page-4 {
-  background-image: url('https://images.unsplash.com/photo-1548095115-45697e4c6ee4?auto=format&fit=crop&w=2000&q=80');
+  background-image:
+    linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.28)),
+    url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/envelop_background.jpg');
 }
 
 .page-5 {
-  background-image: url('https://images.unsplash.com/photo-1568372802998-4e4fcd5b5d5d?auto=format&fit=crop&w=2000&q=80');
+  background-image:
+    linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.28)),
+    url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/envelop_background.jpg');
 }
 
 .couple-art {
