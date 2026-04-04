@@ -80,7 +80,10 @@ body {
   font-weight: 700;
   color: var(--deep-sage);
   cursor: pointer;
+  transition: transform 0.25s ease;
 }
+
+.seal-button:hover { transform: scale(1.04); }
 
 .envelope-text {
   position: relative;
@@ -105,9 +108,7 @@ body {
   display: grid;
   place-content: center;
   text-align: center;
-  gap: 0.6rem;
   padding: 2rem;
-  border-top: 1px solid rgba(219, 203, 163, 0.4);
   color: #fdfcf9;
   position: relative;
   background-size: cover;
@@ -118,19 +119,40 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(8, 18, 13, 0.4), rgba(8, 18, 13, 0.47));
+  background: linear-gradient(rgba(8, 18, 13, 0.45), rgba(8, 18, 13, 0.52));
 }
 
-.page-card::after {
-  content: '☾';
+.card-panel {
+  position: relative;
+  z-index: 1;
+  width: min(92vw, 980px);
+  margin-inline: auto;
+  padding: clamp(1rem, 3vw, 2rem);
+  border-radius: 20px;
+  border: 1.5px solid rgba(242, 207, 117, 0.7);
+  background: linear-gradient(rgba(250, 239, 218, 0.24), rgba(245, 231, 202, 0.2));
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transform: translateY(28px) scale(0.98);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.card-panel::after {
+  content: '';
   position: absolute;
-  top: 1rem;
-  right: 1.3rem;
-  font-size: 2.2rem;
-  color: rgba(242, 207, 117, 0.92);
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.28) 48%, transparent 72%);
+  transform: translateX(-120%);
+  animation: shimmer 6s linear infinite;
+  pointer-events: none;
 }
 
-.page-card > * { position: relative; z-index: 1; }
+.card-panel.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
 
 .page-card h1,
 .page-card h2 {
@@ -167,39 +189,19 @@ body {
   letter-spacing: 0.02em;
 }
 
-.page-1 {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.28)),
-    url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/envelop_background.jpg');
+.page-1,
+.page-4,
+.page-5 {
+  background-image: url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/envelop_background.jpg');
 }
 
 .page-2 {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.36), rgba(0,0,0,0.36)),
-    url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/couple.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-image: url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/couple.png');
 }
 
 .page-3 {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.32), rgba(0,0,0,0.32)),
-    url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/location.png');
+  background-image: url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/location.png');
 }
-
-.page-4 {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.28)),
-    url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/envelop_background.jpg');
-}
-
-.page-5 {
-  background-image:
-    linear-gradient(rgba(0,0,0,0.28), rgba(0,0,0,0.28)),
-    url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/envelop_background.jpg');
-}
-
 
 .blessings-note {
   font-family: 'Great Vibes', cursive;
@@ -214,7 +216,6 @@ ul {
   margin: 0 0 1rem;
 }
 
-
 .map-link {
   justify-self: center;
   display: inline-block;
@@ -225,6 +226,12 @@ ul {
   border-radius: 8px;
   font-weight: 700;
   border: 1px solid rgba(242, 207, 117, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.map-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
 }
 
 .countdown {
@@ -253,4 +260,9 @@ ul {
   cursor: pointer;
   font-family: 'Cinzel', serif;
   font-weight: 700;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
 }
