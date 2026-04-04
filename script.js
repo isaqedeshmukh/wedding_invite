@@ -4,6 +4,7 @@ const envelopeWrap = document.getElementById('envelopeWrap');
 const countdown = document.getElementById('countdown');
 const bgNasheed = document.getElementById('bgNasheed');
 const musicToggle = document.getElementById('musicToggle');
+const animatedPanels = document.querySelectorAll('.card-panel');
 
 const weddingDate = new Date('2026-04-22T19:30:00');
 
@@ -39,6 +40,26 @@ function startNasheed() {
     .catch(() => setMusicButton(false));
 }
 
+function setupPanelAnimations() {
+  if (!('IntersectionObserver' in window)) {
+    animatedPanels.forEach((panel) => panel.classList.add('visible'));
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    },
+    { threshold: 0.35 }
+  );
+
+  animatedPanels.forEach((panel) => observer.observe(panel));
+}
+
 openBtn.addEventListener('click', () => {
   detailsPages.hidden = false;
   openBtn.setAttribute('aria-expanded', 'true');
@@ -46,6 +67,7 @@ openBtn.addEventListener('click', () => {
 
   envelopeWrap.style.minHeight = '100vh';
   startNasheed();
+  setupPanelAnimations();
 });
 
 musicToggle.addEventListener('click', () => {
