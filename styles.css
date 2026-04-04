@@ -6,9 +6,7 @@
   --gold: #f2cf75;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -17,13 +15,11 @@ body {
   color: var(--ink);
   background:
     linear-gradient(rgba(8, 20, 16, 0.4), rgba(8, 20, 16, 0.45)),
-    url('https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?auto=format&fit=crop&w=2000&q=80') center / cover fixed;
+    url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/envelop_background.jpg') center / cover fixed;
   min-height: 100vh;
 }
 
-.page {
-  min-height: 100vh;
-}
+.page { min-height: 100vh; }
 
 .envelope-wrap {
   min-height: 100vh;
@@ -39,7 +35,7 @@ body {
   border-radius: 8px;
   background:
     linear-gradient(rgba(151, 175, 141, 0.95), rgba(151, 175, 141, 0.95)),
-    url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/envelop_background.jpg');
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
   display: flex;
   flex-direction: column;
@@ -58,9 +54,7 @@ body {
   opacity: 0.4;
 }
 
-.envelope::after {
-  transform: scaleX(-1);
-}
+.envelope::after { transform: scaleX(-1); }
 
 .flower {
   position: absolute;
@@ -111,6 +105,7 @@ body {
   display: grid;
   place-content: center;
   text-align: center;
+  gap: 0.6rem;
   padding: 2rem;
   border-top: 1px solid rgba(219, 203, 163, 0.4);
   color: #fdfcf9;
@@ -135,14 +130,11 @@ body {
   color: rgba(242, 207, 117, 0.92);
 }
 
-.page-card > * {
-  position: relative;
-  z-index: 1;
-}
+.page-card > * { position: relative; z-index: 1; }
 
 .page-card h1,
 .page-card h2 {
-  margin: 0 0 1rem;
+  margin: 0 0 0.35rem;
   font-family: 'Cinzel', serif;
   font-weight: 800;
   letter-spacing: 0.05em;
@@ -162,15 +154,15 @@ body {
 .translation-text {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1rem, 2.8vw, 1.3rem) !important;
-  margin-top: -0.2rem;
-  margin-bottom: 0.8rem;
+  margin-top: -0.15rem;
+  margin-bottom: 0.55rem;
 }
 
-.page-card p,
+.handwritten-text,
 .page-card li {
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(2rem, 4.4vw, 2.6rem);
-  line-height: 1.45;
+  font-size: clamp(1.8rem, 4.1vw, 2.35rem);
+  line-height: 1.4;
   font-weight: 700;
   letter-spacing: 0.02em;
 }
@@ -180,7 +172,13 @@ body {
 }
 
 .page-2 {
-  background-image: url('https://images.unsplash.com/photo-1533000759938-aa0ba70beceb?auto=format&fit=crop&w=2000&q=80');
+  background-image:
+    linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
+    url('https://raw.githubusercontent.com/isaqedeshmukh/wedding_invite/main/couple.png'),
+    url('https://images.unsplash.com/photo-1533000759938-aa0ba70beceb?auto=format&fit=crop&w=2000&q=80');
+  background-size: cover, min(72vw, 350px), cover;
+  background-position: center, center 63%, center;
+  background-repeat: no-repeat;
 }
 
 .page-3 {
@@ -195,6 +193,12 @@ body {
   background-image: url('https://images.unsplash.com/photo-1568372802998-4e4fcd5b5d5d?auto=format&fit=crop&w=2000&q=80');
 }
 
+.couple-art {
+  width: min(72vw, 240px);
+  margin: 0.35rem auto;
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.35));
+}
+
 .blessings-note {
   font-family: 'Great Vibes', cursive;
   font-size: clamp(2.1rem, 5vw, 3rem);
@@ -205,7 +209,23 @@ body {
 ul {
   list-style: none;
   padding: 0;
-  margin: 0 0 1rem;
+  margin: 0 0 0.4rem;
+}
+
+.map-preview {
+  width: min(86vw, 700px);
+  margin: 0.6rem auto;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid rgba(242, 207, 117, 0.7);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.35);
+}
+
+.map-preview img {
+  width: 100%;
+  height: min(42vh, 300px);
+  border: 0;
+  display: block;
 }
 
 .map-link {
