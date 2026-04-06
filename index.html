@@ -3,83 +3,104 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wedding Invitation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <title>Wedding Invitation — Isaqe &amp; Gauhar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="page">
-    <section class="envelope-wrap" id="envelopeWrap" aria-label="Invitation envelope">
-      <div class="envelope" role="img" aria-label="Decorative envelope with wax seal">
+
+  <!-- ═══ ENVELOPE SCENE ═══ -->
+  <section class="envelope-scene" id="envelopeScene">
+    <div class="env-wrap" id="envWrap">
+
+      <!-- Envelope body with fold shading + flowers -->
+      <div class="env-body">
+        <div class="env-fold-left"></div>
+        <div class="env-fold-right"></div>
+        <div class="env-fold-bottom"></div>
+        <div class="env-inside"></div>
         <span class="flower flower-a">❀</span>
         <span class="flower flower-b">✿</span>
         <span class="flower flower-c">❁</span>
-
-        <button id="openBtn" class="seal-button" aria-controls="detailsPages" aria-expanded="false">
-          Open
-        </button>
-
-        <p class="envelope-text">Wedding Invitation from Isaqe &amp; Gauhar</p>
       </div>
-    </section>
 
-    <section id="detailsPages" class="details-pages" hidden>
-      <article class="page-card page-1">
-        <div class="card-panel">
-          <h1 class="arabic-heading" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h1>
-          <p class="translation-text">In the name of Allah, the Most Gracious, the Most Merciful.</p>
-          <p class="handwritten-text">
-            Assalamu Alaikum. With gratitude to Allah and in honor of the beautiful Sunnah of Nikah,
-            we invite you to celebrate this blessed union.
-          </p>
-        </div>
-      </article>
+      <!-- Top flap — animates open on click -->
+      <div class="env-flap" id="envFlap">
+        <div class="env-flap-front"></div>
+        <div class="env-flap-inner"></div>
+      </div>
 
-      <article class="page-card page-2">
-        <div class="card-panel">
-          <h2>The Couple</h2>
-          <p class="handwritten-text"><strong>Isaqe &amp; Gauhar</strong></p>
-          <p class="handwritten-text">Request the pleasure of your gracious presence on this joyful occasion.</p>
-        </div>
-      </article>
+      <!-- Wax seal button -->
+      <button class="wax-seal" id="openBtn" aria-label="Open invitation">Open</button>
 
-      <article class="page-card page-3">
-        <div class="card-panel">
-          <h2>Event Details</h2>
-          <ul>
-            <li><strong>Wedding Date:</strong> 22 April 2026</li>
-            <li><strong>Wedding Time:</strong> 7:30 PM</li>
-            <li><strong>Reception Date:</strong> 23 April 2026</li>
-            <li><strong>Reception Time:</strong> 7:30 PM</li>
-            <li><strong>Venue:</strong> Royal Palm Events &amp; Banquet Hall, Hotgi Road, Solapur, Maharashtra</li>
-          </ul>
-          <a class="map-link" href="https://www.google.com/maps/dir//Royal+Palm+-+Events+%26+Banquet+Hall.,+Hotgi+Rd,+Industrial+Estate,+Sainath+Nagar,+Solapur,+Maharashtra+413003/@19.0722217,72.8633633,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bc5da1a28d33553:0x4b3702de1bba1b4f!2m2!1d75.9173014!2d17.640802?entry=ttu&g_ep=EgoyMDI2MDMzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Open Venue Map</a>
-        </div>
-      </article>
+      <p class="tap-hint">Tap seal to open</p>
+      <p class="envelope-text">Wedding Invitation from Isaqe &amp; Gauhar</p>
 
-      <article class="page-card page-4">
-        <div class="card-panel">
-          <h2>Live Wedding Countdown</h2>
-          <div class="countdown" id="countdown" aria-live="polite">Loading timer...</div>
-          <p class="note">We look forward to celebrating with you, InshaAllah.</p>
-        </div>
-      </article>
+    </div>
+  </section>
 
-      <article class="page-card page-5">
-        <div class="card-panel">
-          <h2>No Gifts, Only Blessings</h2>
-          <p class="blessings-note">Your dua, love, and presence are the greatest gifts for us.</p>
-          <p class="blessings-note">Please honor us with your blessings only.</p>
-        </div>
-      </article>
-    </section>
-  </main>
+  <!-- ═══ INVITATION PAGES ═══ -->
+  <section id="detailsPages" class="details-pages" hidden>
+
+    <article class="page-card">
+      <div class="card-panel">
+        <h1 class="arabic-heading" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h1>
+        <p class="translation-text">In the name of Allah, the Most Gracious, the Most Merciful.</p>
+        <p class="handwritten-text">
+          Assalamu Alaikum. With gratitude to Allah and in honor of the beautiful Sunnah of Nikah,
+          we invite you to celebrate this blessed union.
+        </p>
+      </div>
+      <div class="scroll-hint"><span>Scroll</span><div class="arrow"></div></div>
+    </article>
+
+    <article class="page-card">
+      <div class="card-panel">
+        <h2>The Couple</h2>
+        <p class="handwritten-text"><strong>Isaqe &amp; Gauhar</strong></p>
+        <p class="handwritten-text">Request the pleasure of your gracious presence on this joyful occasion.</p>
+      </div>
+      <div class="scroll-hint"><span>Scroll</span><div class="arrow"></div></div>
+    </article>
+
+    <article class="page-card">
+      <div class="card-panel">
+        <h2>Event Details</h2>
+        <ul>
+          <li><strong>Wedding Date:</strong> 22 April 2026</li>
+          <li><strong>Wedding Time:</strong> 7:30 PM</li>
+          <li><strong>Reception Date:</strong> 23 April 2026</li>
+          <li><strong>Reception Time:</strong> 7:30 PM</li>
+          <li><strong>Venue:</strong> Royal Palm Events &amp; Banquet Hall, Hotgi Road, Solapur, Maharashtra</li>
+        </ul>
+        <a class="map-link" href="https://www.google.com/maps/dir//Royal+Palm+-+Events+%26+Banquet+Hall.,+Hotgi+Rd,+Industrial+Estate,+Sainath+Nagar,+Solapur,+Maharashtra+413003" target="_blank" rel="noopener noreferrer">📍 Open Venue Map</a>
+      </div>
+      <div class="scroll-hint"><span>Scroll</span><div class="arrow"></div></div>
+    </article>
+
+    <article class="page-card">
+      <div class="card-panel">
+        <h2>Live Wedding Countdown</h2>
+        <div class="countdown" id="countdown" aria-live="polite">Loading…</div>
+        <p class="note">We look forward to celebrating with you, InshaAllah.</p>
+      </div>
+      <div class="scroll-hint"><span>Scroll</span><div class="arrow"></div></div>
+    </article>
+
+    <article class="page-card">
+      <div class="card-panel">
+        <h2>No Gifts, Only Blessings</h2>
+        <p class="blessings-note">Your dua, love, and presence are the greatest gifts for us.</p>
+        <p class="blessings-note">Please honor us with your blessings only.</p>
+      </div>
+    </article>
+
+  </section>
 
   <audio id="bgNasheed" loop preload="auto">
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_6c26f2f38d.mp3?filename=islamic-background-112193.mp3" type="audio/mpeg" />
-    <source src="https://archive.org/download/beautiful-nasheed-muslim/beautiful-nasheed-muslim.mp3" type="audio/mpeg" />
+    <source src="https://cdn.jsdelivr.net/gh/isaqedeshmukh/wedding_invite@main/Wedding_Audio.mp3" type="audio/mpeg" />
   </audio>
-  <button id="musicToggle" class="music-toggle" aria-label="Play or pause background nasheed">▶ Play Nasheed</button>
+  <button id="musicToggle" class="music-toggle">▶ Play Nasheed</button>
 
   <script src="script.js"></script>
 </body>
